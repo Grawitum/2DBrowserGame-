@@ -8,7 +8,7 @@ namespace BrowserGame2D
         private Transform _back;
         private Vector3 _backStartPosition;
         private Vector3 _cameraStartPosition;
-        private const float _coef = 0.3f;
+        private const float _coef = 1f;
 
         public ParalaxManager(Transform camera, Transform back)
         {
@@ -20,7 +20,7 @@ namespace BrowserGame2D
 
         public void Update()
         {
-            _back.position = _backStartPosition + (_camera.position - _cameraStartPosition) * _coef;
+            _back.position = _backStartPosition + (_camera.position - _cameraStartPosition) * _coef; 
         }
     }
 }
