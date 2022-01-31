@@ -28,8 +28,8 @@ namespace BrowserGame2D
             _camera = Camera.main;
             _paralaxManager = new ParalaxManager(_camera.transform, _back.transform);
 
-            _characterController = new CharacterController(_characterView.SpriteRenderer);
-            _enimyController = new EnimyController(_enimyView.SpriteRenderer);
+            _characterController = new CharacterController(_characterView);
+            _enimyController = new EnimyController(_enimyView);
 
             //_someManager = new SomeManager(config);
             //create some logic managers here for tests <4>

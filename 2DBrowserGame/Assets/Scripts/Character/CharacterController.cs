@@ -6,16 +6,24 @@ namespace BrowserGame2D
     {
         private SpriteAnimator _spriteAnimatorCharacter;
         private CharacterModel _characterModel;
+        private CharacterWalker _characterWalker;
+        private CharacterView _characterView;
 
-        public CharacterController(SpriteRenderer characterView)
+        public CharacterController(CharacterView characterView)
         {
+            _characterView = characterView;
             _characterModel = new CharacterModel();
             _spriteAnimatorCharacter = new SpriteAnimator(_characterModel.configCharacterSpriteAnimations);
-            _spriteAnimatorCharacter.StartAnimation(characterView, _characterModel.startTrack, _characterModel.loopAnimation, _characterModel.speedAnimation);
+            _spriteAnimatorCharacter.StartAnimation(_characterView.SpriteRenderer, _characterModel.startTrack, _characterModel.loopAnimation, _characterModel.speedAnimation);
+
+            _characterWalker = new CharacterWalker(_characterView,_spriteAnimatorCharacter,_characterModel);
         }
 
         public void Update()
         {
+            _characterModel.doJump = Input.GetAxis("Vertical") > 0;
+            _characterModel.xAxisInput = Input.GetAxis("Horizontal");
+            _characterWalker.Update();
             _spriteAnimatorCharacter.Update();
         }
     }
