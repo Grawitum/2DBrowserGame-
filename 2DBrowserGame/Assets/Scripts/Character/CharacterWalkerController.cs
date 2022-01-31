@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
+
 namespace BrowserGame2D
 {
-    public class CharacterWalker
+    public class CharacterWalkerController
     {
-
         private CharacterView _view;
         private SpriteAnimator _spriteAnimator;
         private CharacterModel _characterModel;
 
-        public CharacterWalker(CharacterView view, SpriteAnimator spriteAnimator, CharacterModel model)
+        public CharacterWalkerController(CharacterView view, SpriteAnimator spriteAnimator, CharacterModel model)
         {
             _view = view;
             _spriteAnimator = spriteAnimator;
@@ -45,10 +45,12 @@ namespace BrowserGame2D
                 if (goSideWay) GoSideWay();
                 if (Mathf.Abs(_characterModel.yVelocity) > _characterModel.flyThresh)
                 {
-                    _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump, true, _characterModel.speedAnimation);
+                    _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_up, true, _characterModel.speedAnimation);
                 }
                 _characterModel.yVelocity += _characterModel.g * Time.deltaTime;
                 _view.gameObject.transform.position += Vector3.up * (Time.deltaTime * _characterModel.yVelocity);
+
+                if(_characterModel.yVelocity < 0) _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_down, true, _characterModel.speedAnimation);
             }
         }
 

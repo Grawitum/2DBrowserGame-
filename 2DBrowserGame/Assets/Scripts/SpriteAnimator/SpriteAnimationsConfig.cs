@@ -7,7 +7,8 @@ namespace BrowserGame2D
     public enum Track
     {
         sonic_walk,
-        sonic_jump,
+        sonic_jump_up,
+        sonic_jump_down,
         sonic_idle
     }
 
