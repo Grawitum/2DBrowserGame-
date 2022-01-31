@@ -6,11 +6,11 @@ namespace BrowserGame2D
     {
         private SpriteAnimator _spriteAnimatorEnimy;
         private EnimyModel _enimyModel;
-        public EnimyController(SpriteRenderer enimyView)
+        public EnimyController(EnimyView enimyView)
         {
             _enimyModel = new EnimyModel();
             _spriteAnimatorEnimy = new SpriteAnimator(_enimyModel.configCharacterSpriteAnimations);
-            _spriteAnimatorEnimy.StartAnimation(enimyView, _enimyModel.startTrack,_enimyModel.loopAnimation, _enimyModel.speedAnimation);
+            _spriteAnimatorEnimy.StartAnimation(enimyView.SpriteRenderer, _enimyModel.startTrack,_enimyModel.loopAnimation, _enimyModel.speedAnimation);
         }
 
         public void Update()

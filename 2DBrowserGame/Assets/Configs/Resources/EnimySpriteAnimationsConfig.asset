@@ -27,7 +27,7 @@ MonoBehaviour:
     - {fileID: -2766262877730921423, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
     - {fileID: -5301019853951798375, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
     - {fileID: -2243501376939284712, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
-  - Track: 2
+  - Track: 3
     Sprites:
     - {fileID: -7120353678120450107, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
     - {fileID: -923074108826963025, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}

@@ -10,6 +10,9 @@ namespace BrowserGame2D
         private CharacterView _characterView;
         [SerializeField]
         private EnimyView _enimyView;
+
+        [SerializeField]
+        private TurretView _turretView;
         //add links to test views <1>
 
         private Camera _camera;
@@ -17,6 +20,8 @@ namespace BrowserGame2D
 
         private CharacterController _characterController;
         private EnimyController _enimyController;
+
+        private TurretController _turretController;
 
         //private SomeManager _someManager;
         //add links to some logic managers <2>
@@ -28,8 +33,10 @@ namespace BrowserGame2D
             _camera = Camera.main;
             _paralaxManager = new ParalaxManager(_camera.transform, _back.transform);
 
-            _characterController = new CharacterController(_characterView.SpriteRenderer);
-            _enimyController = new EnimyController(_enimyView.SpriteRenderer);
+            _characterController = new CharacterController(_characterView);
+            _enimyController = new EnimyController(_enimyView);
+
+            _turretController = new TurretController(_turretView,_characterView);
 
             //_someManager = new SomeManager(config);
             //create some logic managers here for tests <4>
@@ -41,6 +48,8 @@ namespace BrowserGame2D
 
             _characterController.Update();
             _enimyController.Update();
+
+            _turretController.Update();
             //_someManager.Update();
             //update logic managers here <5>
         }
