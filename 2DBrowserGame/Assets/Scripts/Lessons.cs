@@ -34,8 +34,6 @@ namespace BrowserGame2D
         private TurretController _turretController;
         private CoinsController _coinsController;
 
-        private LevelCompleteController _levelCompleteController;
-
         private float _fixedDeltaTime;
 
         //private SomeManager _someManager;
@@ -53,8 +51,7 @@ namespace BrowserGame2D
 
             _turretController = new TurretController(_turretView,_characterView);
             _coinsController = new CoinsController(_characterView, _coinViews);
-
-            _levelCompleteController = new LevelCompleteController(_characterView,_deathZones,_winZones);
+            _ = new LevelCompleteController(_characterView, _deathZones, _winZones);
 
             //_someManager = new SomeManager(config);
             //create some logic managers here for tests <4>

@@ -76,7 +76,7 @@ namespace BrowserGame2D
                 (_characterModel.goSideWay > 0 || !_contactsPoller.HasLeftContacts) &&
                 (_characterModel.goSideWay < 0 || !_contactsPoller.HasRightContacts))
             {
-                newVelocity = Time.fixedDeltaTime * _characterModel.walkSpeed *
+                newVelocity = fixedDeltaTime * _characterModel.walkSpeed *
                    (_characterModel.goSideWay < 0 ? -1 : 1);
             }
             _view.Rigidbody2D.velocity = _view.Rigidbody2D.velocity.Change(
