@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feffdc78f7b94d74e82df9bdc6f89e25, type: 3}
+  m_Name: CoinSpriteAnimationsConfig
+  m_EditorClassIdentifier: 
+  Sequences:
+  - Track: 4
+    Sprites:
+    - {fileID: 21300000, guid: 67409052f89a52a478b91271d268cd20, type: 3}
+    - {fileID: 21300000, guid: 8d1d445a092631c4db9517c90b3b5a19, type: 3}
+    - {fileID: 21300000, guid: c8e5bbfc7a48a864a9588c438ae7d73b, type: 3}
+    - {fileID: 21300000, guid: e848962aec96a214a852aa43485ffb47, type: 3}
+    - {fileID: 21300000, guid: 6e187e024c3bc6d4e801ae62af7419f7, type: 3}
+    - {fileID: 21300000, guid: 82db579b10cabe94f9226b8af6ed6f00, type: 3}
+    - {fileID: 21300000, guid: 5b1e7f7ec99fa1c4e91d3b68d7cbf9ba, type: 3}
+    - {fileID: 21300000, guid: ccaa0e67d872e1b4caee875b82e90728, type: 3}
+    - {fileID: 21300000, guid: 682e7ee1faf3a8a46adbfd325b0736a8, type: 3}

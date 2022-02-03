@@ -20,7 +20,7 @@ namespace BrowserGame2D
             _spriteAnimator = spriteAnimator;
             _characterModel = model;
 
-            _contactsPoller = new ContactsPoller(_view.viewCollider2D);
+            _contactsPoller = new ContactsPoller(_view.Collider2D);
         }
 
         public void Update()
@@ -79,12 +79,12 @@ namespace BrowserGame2D
                 newVelocity = Time.fixedDeltaTime * _characterModel.walkSpeed *
                    (_characterModel.goSideWay < 0 ? -1 : 1);
             }
-            _view.viewRigidbody2D.velocity = _view.viewRigidbody2D.velocity.Change(
+            _view.Rigidbody2D.velocity = _view.Rigidbody2D.velocity.Change(
                  x: newVelocity);
             if (_contactsPoller.IsGrounded && _characterModel.doJump &&
-                  Mathf.Abs(_view.viewRigidbody2D.velocity.y) <= _characterModel.jumpThresh)
+                  Mathf.Abs(_view.Rigidbody2D.velocity.y) <= _characterModel.jumpThresh)
             {
-                _view.viewRigidbody2D.AddForce(Vector3.up * _characterModel.jumpForse);
+                _view.Rigidbody2D.AddForce(Vector3.up * _characterModel.jumpForse);
             }
 
             //animations
@@ -94,12 +94,12 @@ namespace BrowserGame2D
                 _spriteAnimator.StartAnimation(_view.SpriteRenderer, track, true,
                     _characterModel.speedAnimation);
             }
-            else if (Mathf.Abs(_view.viewRigidbody2D.velocity.y) > _characterModel.flyThresh)
+            else if (Mathf.Abs(_view.Rigidbody2D.velocity.y) > _characterModel.flyThresh)
             {
                 var track = Track.sonic_jump_up;
                 _spriteAnimator.StartAnimation(_view.SpriteRenderer, track, true,
                     _characterModel.speedAnimation);
-                if (_view.viewRigidbody2D.velocity.y < 0) _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_down, true, _characterModel.speedAnimation);
+                if (_view.Rigidbody2D.velocity.y < 0) _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_down, true, _characterModel.speedAnimation);
             }
         }
 

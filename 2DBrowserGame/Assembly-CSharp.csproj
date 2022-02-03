@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\BulletsEmitterController.cs" />
     <Compile Include="Assets\Scripts\AMVCC\Application.cs" />
     <Compile Include="Assets\Scripts\AMVCC\Controller.cs" />
+    <Compile Include="Assets\Scripts\ContactsPoller.cs" />
     <Compile Include="Assets\Scripts\AMVCC\PlayerView.cs" />
     <Compile Include="Assets\Scripts\ParalaxManager.cs" />
     <Compile Include="Assets\Scripts\BulletModel.cs" />
@@ -84,7 +85,14 @@
     <Compile Include="Assets\Scripts\AMVCC\View.cs" />
     <Compile Include="Assets\Scripts\AMVCC\Element.cs" />
     <Compile Include="Assets\Scripts\AimingGunController.cs" />
-    <Compile Include="Assets\Scripts\ContactsPoller.cs" />
+    <Compile Include="Assets\Scripts\LevelObjectView.cs" />
+    <Compile Include="Assets\Scripts\CoinView.cs" />
+    <Compile Include="Assets\Scripts\FlagView.cs" />
+    <Compile Include="Assets\Scripts\SpikeView.cs" />
+    <Compile Include="Assets\Scripts\CoinsController.cs" />
+    <Compile Include="Assets\Scripts\CoinsModel.cs" />
+    <Compile Include="Assets\Scripts\LevelCompleteController.cs" />
+    <Compile Include="Assets\Scripts\DeathZoneView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

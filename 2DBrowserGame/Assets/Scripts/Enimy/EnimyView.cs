@@ -2,9 +2,8 @@
 
 namespace BrowserGame2D 
 { 
-public class EnimyView : MonoBehaviour
+public class EnimyView : LevelObjectView
     {
-        public SpriteRenderer SpriteRenderer;
         //add other useful refs
     }
 }

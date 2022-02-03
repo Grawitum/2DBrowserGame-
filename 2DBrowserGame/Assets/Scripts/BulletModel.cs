@@ -2,7 +2,7 @@
 
 namespace BrowserGame2D
 {
-    public class BulletModel : MonoBehaviour
+    public class BulletModel
     {
         public float radius = 0.3f;
         public Vector3 velocity;

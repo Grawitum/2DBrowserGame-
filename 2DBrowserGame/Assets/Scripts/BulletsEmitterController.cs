@@ -16,6 +16,7 @@ namespace BrowserGame2D
         public BulletsEmitterController(List<BulletView> bulletViews, Transform transform)
         {
             _bulletsEmitterModel = new BulletsEmitterModel();
+            _timeTillNextBullet = _bulletsEmitterModel.delay;
             _transform = transform;
             foreach (var bulletView in bulletViews)
             {

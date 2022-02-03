@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 
-public class BulletView : MonoBehaviour
+namespace BrowserGame2D
 {
-    [SerializeField]
-    private TrailRenderer _trail;
-
-    public void SetVisible(bool visible)
+    public class BulletView : LevelObjectView
     {
-        if (_trail) _trail.enabled = visible;
-        if (_trail) _trail.Clear();
-        this.gameObject.transform.GetComponent<SpriteRenderer>().enabled = visible;
-    }
+        [SerializeField]
+        private TrailRenderer _trail;
 
+        public void SetVisible(bool visible)
+        {
+            if (_trail) _trail.enabled = visible;
+            if (_trail) _trail.Clear();
+            this.gameObject.transform.GetComponent<SpriteRenderer>().enabled = visible;
+        }
+    }
 }

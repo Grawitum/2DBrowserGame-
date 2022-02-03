@@ -2,7 +2,7 @@
 
 namespace BrowserGame2D
 {
-    public class BlockView : MonoBehaviour
+    public class BlockView : LevelObjectView
     {
 
     }
