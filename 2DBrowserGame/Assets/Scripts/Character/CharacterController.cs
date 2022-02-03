@@ -23,8 +23,13 @@ namespace BrowserGame2D
         {
             _characterModel.doJump = Input.GetAxis("Vertical") > 0;
             _characterModel.xAxisInput = Input.GetAxis("Horizontal");
-            _characterWalker.Update();
+            //_characterWalker.Update();
             _spriteAnimatorCharacter.Update();
+        }
+
+        public void FixedUpdate(float fixedDeltaTime)
+        {
+            _characterWalker.FixedUpdate(fixedDeltaTime);
         }
     }
 }

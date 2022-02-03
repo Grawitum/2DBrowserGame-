@@ -23,6 +23,8 @@ namespace BrowserGame2D
 
         private TurretController _turretController;
 
+        private float _fixedDeltaTime;
+
         //private SomeManager _someManager;
         //add links to some logic managers <2>
 
@@ -56,6 +58,8 @@ namespace BrowserGame2D
 
         private void FixedUpdate()
         {
+            _fixedDeltaTime = Time.fixedDeltaTime;
+            _characterController.FixedUpdate(_fixedDeltaTime);
             //_someManager.FixedUpdate();
             //update logic managers here <6>
         }
