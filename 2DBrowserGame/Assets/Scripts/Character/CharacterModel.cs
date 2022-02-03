@@ -11,6 +11,10 @@ namespace BrowserGame2D
         public float speedAnimation = 10f;
         public float jumpStartSpeed = 8f;
 
+        public float jumpForse = 350;
+        public float jumpThresh = 0.1f;
+
+
         public float movingThresh = 0.1f;
         public float flyThresh = 1f;
 
@@ -21,8 +25,9 @@ namespace BrowserGame2D
         public float xAxisInput = 0;
         public bool doJump = false;
 
-        public float walkSpeed = 3f;
+        public float walkSpeed = 150f;
 
+        public float goSideWay = 0;
 
         public float groundLevel = 0.45f;
         public float yVelocity = 0;

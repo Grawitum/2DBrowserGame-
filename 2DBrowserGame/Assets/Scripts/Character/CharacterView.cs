@@ -2,9 +2,8 @@
 
 namespace BrowserGame2D
 {
-    public class CharacterView : MonoBehaviour
+    public class CharacterView : LevelObjectView
     {
-        public SpriteRenderer SpriteRenderer;
         //add other useful refs
     }
 }

@@ -9,7 +9,8 @@ namespace BrowserGame2D
         sonic_walk,
         sonic_jump_up,
         sonic_jump_down,
-        sonic_idle
+        sonic_idle,
+        coin_rotation
     }
 
     [CreateAssetMenu(fileName = "SpriteAnimationsConfig", menuName = "Configs/SpriteAnimationsConfig", order = 1)]

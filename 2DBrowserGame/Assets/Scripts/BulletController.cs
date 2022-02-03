@@ -18,22 +18,25 @@ namespace BrowserGame2D
         {
             if (IsGrounded())
             {
-                SetVelocity(_bulletModel.velocity.Change(y: -_bulletModel.velocity.y * _bulletModel.velocityDownImpuls));
-                _view.gameObject.transform.position = _view.gameObject.transform.position.Change(y: _bulletModel.groundLevel + _bulletModel.radius);
+                _view.SetVisible(false);
             }
-            else
-            {
-                SetVelocity(_bulletModel.velocity + Vector3.up * _bulletModel.g * Time.deltaTime);
-                _view.gameObject.transform.position += _bulletModel.velocity * Time.deltaTime;
-            }
+            //else
+            //{
+            //    SetVelocity(_bulletModel.velocity + Vector3.up * _bulletModel.g * Time.deltaTime);
+            //    _view.gameObject.transform.position += _bulletModel.velocity * Time.deltaTime;
+            //}
         }
 
         public void Throw(Vector3 position, Vector3 velocity)
         {
+            _view.SetVisible(false);
             _view.gameObject.transform.position = position;
-            SetVelocity(velocity);
+            _view.Rigidbody2D.velocity = Vector2.zero;
+            _view.Rigidbody2D.angularVelocity = 0;
+            _view.Rigidbody2D.AddForce(velocity, ForceMode2D.Impulse);
             _view.SetVisible(true);
         }
+
 
         private void SetVelocity(Vector3 velocity)
         {

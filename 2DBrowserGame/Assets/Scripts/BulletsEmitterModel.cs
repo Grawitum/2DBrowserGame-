@@ -1,10 +1,8 @@
-﻿using UnityEngine;
-
-namespace BrowserGame2D
+﻿namespace BrowserGame2D
 {
-    public class BulletsEmitterModel : MonoBehaviour
+    public class BulletsEmitterModel 
     {
-        public float delay = 1;
-        public float startSpeed = 5;
+        public float delay = 3;
+        public float startSpeed = 12;
     }
 }

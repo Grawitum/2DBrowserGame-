@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace BrowserGame2D
 {
@@ -13,6 +14,15 @@ namespace BrowserGame2D
 
         [SerializeField]
         private TurretView _turretView;
+
+        [SerializeField]
+        private List<LevelObjectView> _coinViews;
+
+        [SerializeField]
+        private List<LevelObjectView> _deathZones;
+
+        [SerializeField]
+        private List<LevelObjectView> _winZones;
         //add links to test views <1>
 
         private Camera _camera;
@@ -22,6 +32,9 @@ namespace BrowserGame2D
         private EnimyController _enimyController;
 
         private TurretController _turretController;
+        private CoinsController _coinsController;
+
+        private float _fixedDeltaTime;
 
         //private SomeManager _someManager;
         //add links to some logic managers <2>
@@ -37,6 +50,8 @@ namespace BrowserGame2D
             _enimyController = new EnimyController(_enimyView);
 
             _turretController = new TurretController(_turretView,_characterView);
+            _coinsController = new CoinsController(_characterView, _coinViews);
+            _ = new LevelCompleteController(_characterView, _deathZones, _winZones);
 
             //_someManager = new SomeManager(config);
             //create some logic managers here for tests <4>
@@ -50,12 +65,15 @@ namespace BrowserGame2D
             _enimyController.Update();
 
             _turretController.Update();
+            _coinsController.Update();
             //_someManager.Update();
             //update logic managers here <5>
         }
 
         private void FixedUpdate()
         {
+            _fixedDeltaTime = Time.fixedDeltaTime;
+            _characterController.FixedUpdate(_fixedDeltaTime);
             //_someManager.FixedUpdate();
             //update logic managers here <6>
         }

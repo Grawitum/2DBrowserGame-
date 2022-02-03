@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BrowserGame2D
 {
-    public class TurretView : MonoBehaviour
+    public class TurretView : LevelObjectView
     {
         public Transform GunTransform;
 

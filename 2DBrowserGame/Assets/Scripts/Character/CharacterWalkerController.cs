@@ -4,15 +4,23 @@ namespace BrowserGame2D
 {
     public class CharacterWalkerController
     {
+        private const string _verticalAxisName = "Vertical";
+        private const string _horizontalAxisName = "Horizontal";
+
+
         private CharacterView _view;
         private SpriteAnimator _spriteAnimator;
         private CharacterModel _characterModel;
+
+        private readonly ContactsPoller _contactsPoller;
 
         public CharacterWalkerController(CharacterView view, SpriteAnimator spriteAnimator, CharacterModel model)
         {
             _view = view;
             _spriteAnimator = spriteAnimator;
             _characterModel = model;
+
+            _contactsPoller = new ContactsPoller(_view.Collider2D);
         }
 
         public void Update()
@@ -50,7 +58,48 @@ namespace BrowserGame2D
                 _characterModel.yVelocity += _characterModel.g * Time.deltaTime;
                 _view.gameObject.transform.position += Vector3.up * (Time.deltaTime * _characterModel.yVelocity);
 
-                if(_characterModel.yVelocity < 0) _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_down, true, _characterModel.speedAnimation);
+                if (_characterModel.yVelocity < 0) _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_down, true, _characterModel.speedAnimation);
+            }
+        }
+
+        public void FixedUpdate(float fixedDeltaTime)
+        {
+            _characterModel.doJump = Input.GetAxis(_verticalAxisName) > 0;
+            _characterModel.goSideWay = Input.GetAxis(_horizontalAxisName);
+            _contactsPoller.Update();
+
+            var walks = Mathf.Abs(_characterModel.goSideWay) > _characterModel.movingThresh;
+
+            if (walks) _view.SpriteRenderer.flipX = _characterModel.goSideWay < 0;
+            var newVelocity = 0f;
+            if (walks &&
+                (_characterModel.goSideWay > 0 || !_contactsPoller.HasLeftContacts) &&
+                (_characterModel.goSideWay < 0 || !_contactsPoller.HasRightContacts))
+            {
+                newVelocity = fixedDeltaTime * _characterModel.walkSpeed *
+                   (_characterModel.goSideWay < 0 ? -1 : 1);
+            }
+            _view.Rigidbody2D.velocity = _view.Rigidbody2D.velocity.Change(
+                 x: newVelocity);
+            if (_contactsPoller.IsGrounded && _characterModel.doJump &&
+                  Mathf.Abs(_view.Rigidbody2D.velocity.y) <= _characterModel.jumpThresh)
+            {
+                _view.Rigidbody2D.AddForce(Vector3.up * _characterModel.jumpForse);
+            }
+
+            //animations
+            if (_contactsPoller.IsGrounded)
+            {
+                var track = walks ? Track.sonic_walk : Track.sonic_idle;
+                _spriteAnimator.StartAnimation(_view.SpriteRenderer, track, true,
+                    _characterModel.speedAnimation);
+            }
+            else if (Mathf.Abs(_view.Rigidbody2D.velocity.y) > _characterModel.flyThresh)
+            {
+                var track = Track.sonic_jump_up;
+                _spriteAnimator.StartAnimation(_view.SpriteRenderer, track, true,
+                    _characterModel.speedAnimation);
+                if (_view.Rigidbody2D.velocity.y < 0) _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.sonic_jump_down, true, _characterModel.speedAnimation);
             }
         }
 
@@ -64,8 +113,5 @@ namespace BrowserGame2D
         {
             return _view.gameObject.transform.position.y <= _characterModel.groundLevel + float.Epsilon && _characterModel.yVelocity <= 0;
         }
-
-
-
     }
 }
