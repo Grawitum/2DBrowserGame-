@@ -23,6 +23,12 @@ namespace BrowserGame2D
 
         [SerializeField]
         private List<LevelObjectView> _winZones;
+
+        [SerializeField]
+        private List<LevelObjectView> _liftViews;
+
+        [SerializeField]
+        private List<LevelObjectView> _turnTriggers;
         //add links to test views <1>
 
         private Camera _camera;
@@ -33,6 +39,8 @@ namespace BrowserGame2D
 
         private TurretController _turretController;
         private CoinsController _coinsController;
+
+        
 
         private float _fixedDeltaTime;
 
@@ -53,6 +61,7 @@ namespace BrowserGame2D
             _coinsController = new CoinsController(_characterView, _coinViews);
             _ = new LevelCompleteController(_characterView, _deathZones, _winZones);
 
+            _ = new LiftsController(_liftViews,_turnTriggers);
             //_someManager = new SomeManager(config);
             //create some logic managers here for tests <4>
         }
