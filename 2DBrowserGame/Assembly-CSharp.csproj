@@ -63,6 +63,9 @@
     <Compile Include="Assets\Scripts\AMVCC\Controller.cs" />
     <Compile Include="Assets\Scripts\ContactsPoller.cs" />
     <Compile Include="Assets\Scripts\AMVCC\PlayerView.cs" />
+    <Compile Include="Assets\Scripts\FlagView.cs" />
+    <Compile Include="Assets\Scripts\CoinsModel.cs" />
+    <Compile Include="Assets\Scripts\DeathZoneView.cs" />
     <Compile Include="Assets\Scripts\ParalaxManager.cs" />
     <Compile Include="Assets\Scripts\BulletModel.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimator\SpriteAnimator.cs" />
@@ -72,7 +75,9 @@
     <Compile Include="Assets\Scripts\Enimy\EnimyController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Enimy\EnimyModel.cs" />
+    <Compile Include="Assets\Scripts\LevelCompleteController.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimator\SpriteAnimationsConfig.cs" />
+    <Compile Include="Assets\Scripts\CoinView.cs" />
     <Compile Include="Assets\Scripts\AMVCC\Model.cs" />
     <Compile Include="Assets\Scripts\BulletsEmitterModel.cs" />
     <Compile Include="Assets\Scripts\Lessons.cs" />
@@ -80,19 +85,15 @@
     <Compile Include="Assets\Scripts\TurretController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterView.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
+    <Compile Include="Assets\Scripts\CoinsController.cs" />
+    <Compile Include="Assets\Scripts\LevelObjectView.cs" />
+    <Compile Include="Assets\Scripts\SpikeView.cs" />
     <Compile Include="Assets\Scripts\TurretView.cs" />
     <Compile Include="Assets\Scripts\BlockView.cs" />
     <Compile Include="Assets\Scripts\AMVCC\View.cs" />
     <Compile Include="Assets\Scripts\AMVCC\Element.cs" />
     <Compile Include="Assets\Scripts\AimingGunController.cs" />
-    <Compile Include="Assets\Scripts\LevelObjectView.cs" />
-    <Compile Include="Assets\Scripts\CoinView.cs" />
-    <Compile Include="Assets\Scripts\FlagView.cs" />
-    <Compile Include="Assets\Scripts\SpikeView.cs" />
-    <Compile Include="Assets\Scripts\CoinsController.cs" />
-    <Compile Include="Assets\Scripts\CoinsModel.cs" />
-    <Compile Include="Assets\Scripts\LevelCompleteController.cs" />
-    <Compile Include="Assets\Scripts\DeathZoneView.cs" />
+    <Compile Include="Assets\Scripts\LiftsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
