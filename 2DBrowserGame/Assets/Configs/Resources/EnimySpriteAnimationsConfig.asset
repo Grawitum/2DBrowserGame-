@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feffdc78f7b94d74e82df9bdc6f89e25, type: 3}
+  m_Name: EnimySpriteAnimationsConfig
+  m_EditorClassIdentifier: 
+  Sequences:
+  - Track: 0
+    Sprites:
+    - {fileID: 8365157939880598330, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: -7865477695453466458, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: 287381255761024823, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: -6800639738287543604, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: 4645652409565013057, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: 8851341768549900506, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: -6795863619433980874, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: 7437992330491143700, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: 1936837688200661341, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: -2766262877730921423, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: -5301019853951798375, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+    - {fileID: -2243501376939284712, guid: c4fcbdf73ef772a49bbae1ee16c03ecf, type: 3}
+  - Track: 3
+    Sprites:
+    - {fileID: -7120353678120450107, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: -923074108826963025, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: -6029481724776854917, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: 6119928017111757476, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: -7522205058743977575, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: 8914145158270254499, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: -1974523960706110924, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: 1015380703086894823, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: -3486756605459319784, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: -84449176914155997, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
+    - {fileID: 3886914345744565109, guid: 42ebc6c1a6ccdd44fb65ad83d0536620, type: 3}
