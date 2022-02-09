@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\DeathZoneView.cs" />
     <Compile Include="Assets\Scripts\ParalaxManager.cs" />
     <Compile Include="Assets\Scripts\BulletModel.cs" />
+    <Compile Include="Assets\Scripts\LiftsController.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimator\SpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterWalkerController.cs" />
     <Compile Include="Assets\Scripts\Enimy\EnimyView.cs" />
@@ -93,7 +94,12 @@
     <Compile Include="Assets\Scripts\AMVCC\View.cs" />
     <Compile Include="Assets\Scripts\AMVCC\Element.cs" />
     <Compile Include="Assets\Scripts\AimingGunController.cs" />
-    <Compile Include="Assets\Scripts\LiftsController.cs" />
+    <Compile Include="Assets\Scripts\Enimy\AI\SimplePatrolAIWaypointController.cs" />
+    <Compile Include="Assets\Scripts\Enimy\AI\AIConfig.cs" />
+    <Compile Include="Assets\Scripts\Enimy\AI\SimplePatrolAIController.cs" />
+    <Compile Include="Assets\Scripts\Enimy\AI\EnemiesConfigurator.cs" />
+    <Compile Include="Assets\Scripts\Enimy\AI\StalkerAI\StalkerAIWaypointController.cs" />
+    <Compile Include="Assets\Scripts\Enimy\AI\StalkerAI\StalkerAIController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -287,6 +293,9 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Unity\2020.1.17f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -716,6 +725,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{04CF0F0B-3403-ECBF-B254-2577A6763B47}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{076A7EA1-DCE1-DEA0-0E65-F335E8C2F13E}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{D176523B-4E46-7311-9269-EA789601A264}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
