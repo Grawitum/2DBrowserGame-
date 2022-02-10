@@ -83,6 +83,7 @@ namespace BrowserGame2D
         {
             _fixedDeltaTime = Time.fixedDeltaTime;
             _characterController.FixedUpdate(_fixedDeltaTime);
+            _enimyController.FixedUpdate();
             //_someManager.FixedUpdate();
             //update logic managers here <6>
         }
