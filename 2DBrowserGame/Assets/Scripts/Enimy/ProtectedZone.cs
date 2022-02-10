@@ -29,9 +29,12 @@ namespace BrowserGame2D
 
         private void OnContact(object sender, GameObject gameObject)
         {
-            foreach (var protector in _protectors)
+            if (gameObject.GetComponent<CharacterView>())
             {
-                protector.StartProtection(gameObject);
+                foreach (var protector in _protectors)
+                {
+                    protector.StartProtection(gameObject);
+                }
             }
         }
 
