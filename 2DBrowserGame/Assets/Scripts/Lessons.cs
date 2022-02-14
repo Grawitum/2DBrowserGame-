@@ -44,8 +44,20 @@ namespace BrowserGame2D
 
         private float _fixedDeltaTime;
 
+        [SerializeField]
+        private GenerateLevelView _generateLevelView;
+
+        private GeneratorLevelController _generatorLevelController;
+
         //private SomeManager _someManager;
         //add links to some logic managers <2>
+
+        private void Awake()
+        {
+            _generatorLevelController = new GeneratorLevelController(_generateLevelView);
+            _generatorLevelController.Awake();
+
+        }
 
         private void Start()
         {
