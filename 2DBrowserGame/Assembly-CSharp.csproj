@@ -94,9 +94,11 @@
     <Compile Include="Assets\Scripts\Character\CharacterView.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Enimy\AI\SimplePatrolAIController.cs" />
+    <Compile Include="Assets\Scripts\GenerateLevelView.cs" />
     <Compile Include="Assets\Scripts\Enimy\AI\StalkerAI\StalkerAIController.cs" />
     <Compile Include="Assets\Scripts\Enimy\AI\EnemiesConfigurator.cs" />
     <Compile Include="Assets\Scripts\CoinsController.cs" />
+    <Compile Include="Assets\Scripts\GeneratorLevelController.cs" />
     <Compile Include="Assets\Scripts\LevelObjectView.cs" />
     <Compile Include="Assets\Scripts\SpikeView.cs" />
     <Compile Include="Assets\Scripts\TurretView.cs" />
@@ -106,8 +108,18 @@
     <Compile Include="Assets\Scripts\AMVCC\Element.cs" />
     <Compile Include="Assets\Scripts\Enimy\Patrol\AIPatrolPath.cs" />
     <Compile Include="Assets\Scripts\AimingGunController.cs" />
-    <Compile Include="Assets\Scripts\GenerateLevelView.cs" />
-    <Compile Include="Assets\Scripts\GeneratorLevelController.cs" />
+    <Compile Include="Assets\Scripts\Quest\Config\QuestConfig.cs" />
+    <Compile Include="Assets\Scripts\Quest\Config\QuestItemsConfig.cs" />
+    <Compile Include="Assets\Scripts\Quest\Config\QuestStoryConfig.cs" />
+    <Compile Include="Assets\Scripts\Quest\Interface\IQuest.cs" />
+    <Compile Include="Assets\Scripts\Quest\Interface\IQuestModel.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestObjectView.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest.cs" />
+    <Compile Include="Assets\Scripts\Quest\SwitchQuestModel.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestsConfigurator.cs" />
+    <Compile Include="Assets\Scripts\Quest\Interface\IQuestStory.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestStory.cs" />
+    <Compile Include="Assets\Scripts\Quest\ResettableQuestStory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
