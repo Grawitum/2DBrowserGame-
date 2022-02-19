@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4319845313564634626}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 8507622998053706818}
-  viewRigidbody2D: {fileID: 4319845313564634626}
-  viewCollider2D: {fileID: 3971825956236063938}
+  Transform: {fileID: 0}
+  Collider2D: {fileID: 0}
+  Rigidbody2D: {fileID: 0}
 --- !u!70 &3971825956236063938
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,7 +115,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_Direction: 0
 --- !u!50 &4319845313564634626
 Rigidbody2D:
