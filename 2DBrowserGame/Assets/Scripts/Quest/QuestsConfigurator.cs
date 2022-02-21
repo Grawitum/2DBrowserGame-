@@ -37,11 +37,6 @@ namespace BrowserGame2D
             }
         }
 
-        private void FixedUpdate()
-        {
-
-        }
-
         private void OnDestroy()
         {
             foreach (var questStory in _questStories)
@@ -49,7 +44,6 @@ namespace BrowserGame2D
                 questStory.Dispose();
             }
             _questStories.Clear();
-
         }
 
         private IQuestStory CreateQuestStory(QuestStoryConfig config)

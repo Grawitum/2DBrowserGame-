@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace BrowserGame2D
 {
@@ -22,7 +21,6 @@ namespace BrowserGame2D
             if (completed) 
             {
                 Complete();
-                Debug.Log(_view.Id + " Complete QuestItem");
             }  
         }
 

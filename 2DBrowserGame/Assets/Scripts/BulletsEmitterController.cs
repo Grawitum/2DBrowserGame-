@@ -24,11 +24,11 @@ namespace BrowserGame2D
             }
         }
 
-        public void Update()
+        public void Update(float deltaTime)
         {
             if (_timeTillNextBullet > 0)
             {
-                _timeTillNextBullet -= Time.deltaTime;
+                _timeTillNextBullet -= deltaTime;
             }
             else
             {
@@ -37,7 +37,7 @@ namespace BrowserGame2D
                 _currentIndex++;
                 if (_currentIndex >= _bullets.Count) _currentIndex = 0;
             }
-            _bullets.ForEach(b => b.Update());
+            _bullets.ForEach(bullet => bullet.Update());
         }
     }
 }

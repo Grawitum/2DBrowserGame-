@@ -35,6 +35,5 @@ namespace BrowserGame2D
         public int FactorSmooth => _factorSmooth;
 
         public int RandomFillPercent => _randomFillPercent;
-
     }
 }

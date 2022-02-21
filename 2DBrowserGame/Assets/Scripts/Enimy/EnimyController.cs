@@ -13,9 +13,9 @@
             _spriteAnimatorEnimy.StartAnimation(enimyView.SpriteRenderer, _enimyModel.startTrack,_enimyModel.loopAnimation, _enimyModel.speedAnimation);
         }
 
-        public void Update()
+        public void Update(float deltaTime)
         {
-            _spriteAnimatorEnimy.Update();
+            _spriteAnimatorEnimy.Update(deltaTime);
         }
 
         public void FixedUpdate()

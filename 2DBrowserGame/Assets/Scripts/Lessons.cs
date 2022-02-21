@@ -29,7 +29,6 @@ namespace BrowserGame2D
 
         [SerializeField]
         private List<LevelObjectView> _turnTriggers;
-        //add links to test views <1>
 
         private Camera _camera;
         private ParalaxManager _paralaxManager;
@@ -40,7 +39,8 @@ namespace BrowserGame2D
         private TurretController _turretController;
         private CoinsController _coinsController;
 
-        
+        private LevelCompleteController _levelCompleteController;
+        private LiftsController _liftsController;
 
         private float _fixedDeltaTime;
 
@@ -49,20 +49,16 @@ namespace BrowserGame2D
 
         private GeneratorLevelController _generatorLevelController;
 
-        //private SomeManager _someManager;
-        //add links to some logic managers <2>
+        private float _deltaTime;
 
         private void Awake()
         {
             _generatorLevelController = new GeneratorLevelController(_generateLevelView);
             _generatorLevelController.Awake();
-
         }
 
         private void Start()
         {
-            //SomeConfig config = Resources.Load("SomeConfig", typeof(SomeConfig))as   SomeConfig;
-            //load some configs here <3>
             _camera = Camera.main;
             _paralaxManager = new ParalaxManager(_camera.transform, _back.transform);
 
@@ -71,41 +67,36 @@ namespace BrowserGame2D
 
             _turretController = new TurretController(_turretView,_characterView);
             _coinsController = new CoinsController(_characterView, _coinViews);
-            _ = new LevelCompleteController(_characterView, _deathZones, _winZones);
+            _levelCompleteController = new LevelCompleteController(_characterView, _deathZones, _winZones);
 
-            _ = new LiftsController(_liftViews,_turnTriggers);
-            //_someManager = new SomeManager(config);
-            //create some logic managers here for tests <4>
+            _liftsController = new LiftsController(_liftViews,_turnTriggers);
         }
 
         private void Update()
         {
+            _deltaTime = Time.deltaTime;
+
             _paralaxManager.Update();
-
-            _characterController.Update();
-            _enimyController.Update();
-
-            _turretController.Update();
-            _coinsController.Update();
-            //_someManager.Update();
-            //update logic managers here <5>
+            _characterController.Update(_deltaTime);
+            _enimyController.Update(_deltaTime);
+            _turretController.Update(_deltaTime);
+            _coinsController.Update(_deltaTime);
         }
 
         private void FixedUpdate()
         {
             _fixedDeltaTime = Time.fixedDeltaTime;
+
             _characterController.FixedUpdate(_fixedDeltaTime);
             _enimyController.FixedUpdate();
-            //_someManager.FixedUpdate();
-            //update logic managers here <6>
         }
 
         private void OnDestroy()
         {
-            //_someManager.Dispose();
-            //dispose logic managers here <7>
+            _coinsController.Dispose();
+            _levelCompleteController.Dispose();
+            _liftsController.Dispose();
         }
-
     }
 }
 

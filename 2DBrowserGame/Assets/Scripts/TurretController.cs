@@ -10,19 +10,15 @@
         public TurretController(TurretView turretView, CharacterView characterView)
         {
             _turretView = turretView;
-            //_turretModel = new CharacterModel();
 
             _aimingGun = new AimingGunController(_turretView.GunTransform, characterView.transform);
-
             _bulletsEmitter = new BulletsEmitterController(_turretView.bulletViews, _turretView.GunTransform);
-
-
         }
 
-        public void Update()
+        public void Update(float deltaTime)
         {
             _aimingGun.Update();
-            _bulletsEmitter.Update();
+            _bulletsEmitter.Update(deltaTime);
         }
     }
 }

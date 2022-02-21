@@ -28,9 +28,9 @@ namespace BrowserGame2D
             }
         }
 
-        public void Update()
+        public void Update(float deltaTime)
         {
-            _spriteAnimator.Update();
+            _spriteAnimator.Update(deltaTime);
         }
 
         private void OnLevelObjectContact(LevelObjectView contactView)
@@ -49,6 +49,5 @@ namespace BrowserGame2D
         {
             _characterView.OnLevelObjectContact -= OnLevelObjectContact;
         }
-
     }
 }

@@ -5,7 +5,7 @@ namespace BrowserGame2D
 {
     public class GeneratorLevelController 
     {
-        private const int CountWall = 4;
+        private const int _countWall = 4;
 
         private Tilemap _tileMapGround;
         private Tile _tileGround;
@@ -68,9 +68,9 @@ namespace BrowserGame2D
                 {
                     var neighbourWallTiles = GetSurroundingWallCount(x, y);
 
-                    if (neighbourWallTiles > CountWall)
+                    if (neighbourWallTiles > _countWall)
                         _map[x, y] = 1;
-                    else if (neighbourWallTiles < CountWall)
+                    else if (neighbourWallTiles < _countWall)
                         _map[x, y] = 0;
                 }
             }
@@ -95,7 +95,6 @@ namespace BrowserGame2D
                     }
                 }
             }
-
             return wallCount;
         }
 
@@ -115,6 +114,5 @@ namespace BrowserGame2D
                 }
             }
         }
-
     }
 }
