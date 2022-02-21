@@ -25,6 +25,5 @@ namespace BrowserGame2D
         {
             SpriteRenderer.color = _defaultColor;
         }
-
     }
 }

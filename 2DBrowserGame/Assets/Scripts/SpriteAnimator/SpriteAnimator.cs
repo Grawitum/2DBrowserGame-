@@ -15,10 +15,10 @@ namespace BrowserGame2D
             public float Counter = 0;
             public bool Sleeps;
 
-            public void Update()
+            public void Update(float deltaTime)
             {
                 if (Sleeps) return;
-                Counter += Time.deltaTime * Speed;
+                Counter += deltaTime * Speed;
                 if (Loop)
                 {
                     while (Counter > Sprites.Count)
@@ -76,11 +76,11 @@ namespace BrowserGame2D
             }
         }
 
-        public void Update()
+        public void Update(float deltaTime)
         {
             foreach (var animation in _activeAnimations)
             {
-                animation.Value.Update();
+                animation.Value.Update(deltaTime);
                 animation.Key.sprite = animation.Value.Sprites[(int)animation.Value.Counter];
             }
         }
@@ -89,6 +89,5 @@ namespace BrowserGame2D
         {
             _activeAnimations.Clear();
         }
-
     }
 }

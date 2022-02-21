@@ -22,14 +22,10 @@ namespace BrowserGame2D
 
         private void OnLevelObjectContact(LevelObjectView contactView)
         {
-            //Debug.Log(contactView.name);
             if (_liftViews.Contains(contactView))
             {
-                //Debug.Log("lift");
                 _jointMotor = contactView.gameObject.GetComponent<SliderJoint2D>().motor;
-                //Debug.Log(_jointMotor.motorSpeed);
                 _jointMotor.motorSpeed *= -1;
-                //Debug.Log(_jointMotor.motorSpeed);
                 contactView.gameObject.GetComponent<SliderJoint2D>().motor = _jointMotor;
             }
         }

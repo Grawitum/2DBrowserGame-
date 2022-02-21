@@ -4,10 +4,6 @@ namespace BrowserGame2D
 {
     public class CharacterWalkerController
     {
-        private const string _verticalAxisName = "Vertical";
-        private const string _horizontalAxisName = "Horizontal";
-
-
         private CharacterView _view;
         private SpriteAnimator _spriteAnimator;
         private CharacterModel _characterModel;
@@ -25,8 +21,8 @@ namespace BrowserGame2D
 
         public void Update()
         {
-            _characterModel.doJump = Input.GetAxis("Vertical") > 0;
-            _characterModel.xAxisInput = Input.GetAxis("Horizontal");
+            _characterModel.doJump = Input.GetAxis(AxisManager.VERTICAL) > 0;
+            _characterModel.xAxisInput = Input.GetAxis(AxisManager.HORIZONTAL);
             var goSideWay = Mathf.Abs(_characterModel.xAxisInput) > _characterModel.movingThresh;
 
             if (IsGrounded())
@@ -64,8 +60,8 @@ namespace BrowserGame2D
 
         public void FixedUpdate(float fixedDeltaTime)
         {
-            _characterModel.doJump = Input.GetAxis(_verticalAxisName) > 0;
-            _characterModel.goSideWay = Input.GetAxis(_horizontalAxisName);
+            _characterModel.doJump = Input.GetAxis(AxisManager.VERTICAL) > 0;
+            _characterModel.goSideWay = Input.GetAxis(AxisManager.HORIZONTAL);
             _contactsPoller.Update();
 
             var walks = Mathf.Abs(_characterModel.goSideWay) > _characterModel.movingThresh;
@@ -106,7 +102,7 @@ namespace BrowserGame2D
         private void GoSideWay()
         {
             _view.gameObject.transform.position += Vector3.right * (Time.deltaTime * _characterModel.walkSpeed * (_characterModel.xAxisInput < 0 ? -1 : 1));
-            _view.gameObject.transform.localScale = (_characterModel.xAxisInput < 0 ? _characterModel.leftScale : _characterModel.rightScale);
+            _view.gameObject.transform.localScale = _characterModel.xAxisInput < 0 ? _characterModel.leftScale : _characterModel.rightScale;
         }
 
         public bool IsGrounded()

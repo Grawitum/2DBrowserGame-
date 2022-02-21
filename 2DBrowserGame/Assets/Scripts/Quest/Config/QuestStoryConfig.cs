@@ -13,5 +13,4 @@ namespace BrowserGame2D
         Common,
         Resettable
     }
-
 }

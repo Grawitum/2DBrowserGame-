@@ -11,7 +11,7 @@ namespace BrowserGame2D
         {
             if (_trail) _trail.enabled = visible;
             if (_trail) _trail.Clear();
-            this.gameObject.transform.GetComponent<SpriteRenderer>().enabled = visible;
+            SpriteRenderer.enabled = visible;
         }
     }
 }

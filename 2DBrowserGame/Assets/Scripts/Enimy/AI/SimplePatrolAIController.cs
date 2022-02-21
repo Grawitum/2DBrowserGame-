@@ -14,9 +14,9 @@ namespace BrowserGame2D
             _waypointController = model != null ? model : throw new ArgumentNullException(nameof(model));
         }
 
-        public void FixedUpdate()
+        public void FixedUpdate(float fixedDeltaTime)
         {
-            var newVelocity = _waypointController.CalculateVelocity(_view.Transform.position) * Time.fixedDeltaTime;
+            var newVelocity = _waypointController.CalculateVelocity(_view.Transform.position) * fixedDeltaTime;
             _view.Rigidbody2D.velocity = newVelocity;
         }
     }

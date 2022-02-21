@@ -14,9 +14,9 @@ namespace BrowserGame2D
             _config = config;
         }
 
-        public void UpdatePath(Path p)
+        public void UpdatePath(Path path)
         {
-            _path = p;
+            _path = path;
             _currentPointIndex = 0;
         }
 

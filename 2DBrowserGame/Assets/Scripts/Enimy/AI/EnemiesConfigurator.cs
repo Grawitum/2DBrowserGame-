@@ -30,6 +30,8 @@ namespace BrowserGame2D
         private ProtectorAI _protectorAI;
         private ProtectedZone _protectedZone;
 
+        private float _fixedUpdate;
+
         private void Start()
         {
             _simplePatrolAIController = new SimplePatrolAIController(_simplePatrolAIView, new SimplePatrolAIWaypointController(_simplePatrolAIConfig));
@@ -41,13 +43,13 @@ namespace BrowserGame2D
 
             _protectedZone = new ProtectedZone(_protectedZoneTrigger, new List<IProtector> { _protectorAI });
             _protectedZone.Init();
-
         }
 
         private void FixedUpdate()
         {
-            if (_simplePatrolAIController != null) _simplePatrolAIController.FixedUpdate();
-            if (_stalkerAI != null) _stalkerAI.FixedUpdate();
+            _fixedUpdate = Time.fixedDeltaTime;
+            if (_simplePatrolAIController != null) _simplePatrolAIController.FixedUpdate(_fixedUpdate);
+            if (_stalkerAI != null) _stalkerAI.FixedUpdate(_fixedUpdate);
         }
 
         private void RecalculateAIPath()

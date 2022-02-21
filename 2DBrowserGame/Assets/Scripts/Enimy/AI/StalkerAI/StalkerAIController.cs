@@ -19,9 +19,9 @@ namespace BrowserGame2D
             _target = target != null ? target : throw new ArgumentNullException(nameof(target));
         }
 
-        public void FixedUpdate()
+        public void FixedUpdate(float fixedDeltaTime)
         {
-            var newVelocity = _model.CalculateVelocity(_view.Transform.position) * Time.fixedDeltaTime;
+            var newVelocity = _model.CalculateVelocity(_view.Transform.position) * fixedDeltaTime;
             _view.Rigidbody2D.velocity = newVelocity;
         }
 

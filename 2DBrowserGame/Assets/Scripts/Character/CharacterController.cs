@@ -19,12 +19,11 @@ namespace BrowserGame2D
             _characterWalker = new CharacterWalkerController(_characterView,_spriteAnimatorCharacter,_characterModel);
         }
 
-        public void Update()
+        public void Update(float deltaTime)
         {
-            _characterModel.doJump = Input.GetAxis("Vertical") > 0;
-            _characterModel.xAxisInput = Input.GetAxis("Horizontal");
-            //_characterWalker.Update();
-            _spriteAnimatorCharacter.Update();
+            _characterModel.doJump = Input.GetAxis(AxisManager.VERTICAL) > 0;
+            _characterModel.xAxisInput = Input.GetAxis(AxisManager.HORIZONTAL);
+            _spriteAnimatorCharacter.Update(deltaTime);
         }
 
         public void FixedUpdate(float fixedDeltaTime)
